@@ -17,3 +17,8 @@ SQLSRV_CONFIG = {
     "pass":     'usrMyPass',
     "appName":  ''
 }
+
+SQLSRV_TABLES = {
+    "monitor_list": '',
+    "monitor_log":  ''
+}

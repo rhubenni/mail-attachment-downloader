@@ -18,4 +18,4 @@ PROXY = {
 }
 
 # Define PySocks Version (False = Classic Pysocks, True = Pysocks Extended)
-USE_PYSOCKS_EXTENDED = False
+USE_PYSOCKS_EXTENDED = True
