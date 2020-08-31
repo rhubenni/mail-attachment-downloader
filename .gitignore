@@ -1,0 +1,12 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.idea/
+*.xml
+
+# Personal Data
+proxy_config.py
+imap_config.py
+pyodbc_config.py
