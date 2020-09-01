@@ -22,3 +22,4 @@ SQLSRV_TABLES = {
     "monitor_list": '',
     "monitor_log":  ''
 }
+

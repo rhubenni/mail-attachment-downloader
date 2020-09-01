@@ -30,6 +30,8 @@ def MonitorLog(RuleId, MailId, ExecutionStatus, ExecutionMessage, debugLevel = F
             cursor = sqlh.conn.cursor()
             cursor.execute(sqlstmt, RuleId, MailId, ExecutionStatus, ExecutionMessage)
             cursor.commit()
+            if DEBUG_MODE == True:
+                print(RuleId, MailId, ExecutionStatus, ExecutionMessage)
 
         except pyodbc.Error as ex:
             print('An error occurred while writing the log to the database')

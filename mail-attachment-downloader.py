@@ -56,9 +56,17 @@ if __name__ == '__main__':
     monitor.ROOT_SAVEPATH = ROOT_SAVEPATH
     monitor.get_monitor_list()
     monitor.check_messages(imap.messages)
-    print(monitor.mails_matched_ok)
-    print(monitor.mails_matched_failure)
-    print(monitor.mails_not_matched)
+
+    imap.marks_as_seen(monitor.mails_matched_ok)
+    imap.marks_as_seen(monitor.mails_not_matched)
+
+    monitor.mails_not_matched = list(set(monitor.mails_not_matched) - set(monitor.mails_matched_ok))
+    monitor.mails_not_matched = list(set(monitor.mails_not_matched) - set(monitor.mails_matched_failure))
+
+    imap.delete_mails(monitor.mails_not_matched)
+
+    imap.disconnect()
+
 
 
 

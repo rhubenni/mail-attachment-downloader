@@ -70,3 +70,17 @@ class IMAPHandler:
                         "carboncopy": mail.get("Cc"),
                         "attach": self.check_attachment(mail)
                     })
+
+    def marks_as_seen(self, uids):
+        for mail_id in uids:
+            self.conn.store(mail_id, '+FLAGS', '\\Seen')
+
+    def delete_mails(self, uids):
+        for mail_id in uids:
+            print('Deleting: ' + str(mail_id))
+            self.conn.store(mail_id, '+FLAGS', '\\Deleted')
+        self.conn.expunge()
+
+    def disconnect(self):
+        self.conn.close()
+        self.conn.logout()

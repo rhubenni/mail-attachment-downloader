@@ -44,3 +44,4 @@ class SQLHandler:
             data.append(dict(zip(columns, row)))
 
         return data
+
